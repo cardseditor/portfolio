@@ -1,36 +1,55 @@
-# This is a basic workflow to help you get started with Actions
+name: Release GitHub Page
 
-name: CI
-
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+env:
+  NODE_VERSION: '16'
+
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+      - name: Install packages
+        run: npm install
+      - name: build blog
+        run: npm run build
+      - name: export blog
+        run: npm run export
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
+      # 生成した結果を保存しておく
+      - name: upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: export_out
+          path: ./out
 
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      # gh-pagesを使って公開(private key: SSH_KEY)
+      - name: deploy
+        uses: peaceiris/actions-gh-pages@v3
+        #env:
+        with:
+          deploy_key: ${{ secrets.SSH_KEY }} # 鍵の名前を指定
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: ./out
+          cname: cardseditor.gajeroll.com #カスタムドメインを指定
+
+      - name: push with rsync
+        run: rsync -rlptgoD -O --delete --exclude ".git/" -e "ssh -i .ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p ${SSH_PORT}" dist/ $SSH_USER@$SSH_HOST:$DIR
+        env:
+          DIR: ~/public_html/hoge
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
