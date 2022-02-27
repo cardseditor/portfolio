@@ -1,57 +1,32 @@
-# name: Deploy into production server
+name: deploy to ConoHa WING
 
-# on:
-#   push:
-#     branches:
-#     - master
+on:
+  push:
+    branches:
+      - main
 
-# jobs:
-#   deploy:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v2
-#       - name: prepare .ssh dir
-#         run: mkdir -p .ssh && chmod 700 .ssh
-#       - name: ssh key generate
-#         run: echo "$SSH_KEY" > .ssh/id_rsa && chmod 600 .ssh/id_rsa
-#         env:
-#           SSH_KEY: ${{ secrets.SSH_KEY }}
-#       - name: Cache yarn packages
-#         uses: actions/cache@v1
-#         with:
-#           path: ~/.cache/yarn
-#           key: ${{ runner.os }}-yarn-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-#           restore-keys:
-#             ${{ runner.os }}-yarn-
-#       - name: install packages
-#         run: yarn install
-#       - name: build
-#         run: yarn build
-#       ...name: Release GitHub Page
-
-#       - name: Use Node.js
-#         uses: actions/setup-node@v2
-#         with:
-#           node-version: ${{ env.NODE_VERSION }}
-#           cache: 'npm'
-#       - name: Install packages
-#         run: npm install
-#       - name: build blog
-#         run: npm run build
-#       - name: export blog
-#         run: npm run export
-
-#       # 生成した結果を保存しておく
-#       - name: upload artifact
-#         uses: actions/upload-artifact@v2
-#         with:
-#           name: export_out
-#           path: ./out
-
-#       - name: push with rsync
-#         run: rsync -rlptgoD -O --delete --exclude ".git/" -e "ssh -i .ssh/id_rsa -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -p ${SSH_PORT}" dist/ $SSH_USER@$SSH_HOST:$DIR
-#         env:
-#           DIR: ~/
-#           SSH_HOST: ${{ secrets.SSH_HOST }}
-#           SSH_USER: ${{ secrets.SSH_USER }}
-#           SSH_PORT: ${{ secrets.SSH_PORT }}
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+        - uses: borales/actions-yarn@v2.3.0
+          with:
+            cmd: install
+        - uses: borales/actions-yarn@v2.3.0
+          with:
+            cmd: build
+        - name: ssh key generate
+          run: echo "$SSH_KEY" > key && chmod 600 key
+          env:
+            SSH_KEY: ${{ secrets.SSH_KEY }}
+        - name: rsync deployments
+          uses: burnett01/rsync-deployments@5.1
+          with:
+            switches: -avz --delete
+            path: pages/
+            remote_path: ${{ secrets.SSH_PATH }}
+            remote_host: ${{ secrets.SSH_HOST }}
+            remote_user: ${{ secrets.SSH_USER }}
+            remote_port: ${{ secrets.SSH_PORT }}
+            remote_key: ${{ secrets.SSH_KEY }}
