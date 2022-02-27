@@ -40,7 +40,7 @@ jobs:
         uses: burnett01/rsync-deployments@5.1
         with:
           switches: -avz --delete
-          path: ./pages/
+          path: ./out
           remote_path: ${{ secrets.SSH_PATH }}
           remote_host: ${{ secrets.SSH_HOST }}
           remote_user: ${{ secrets.SSH_USER }}
