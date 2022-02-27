@@ -1,11 +1,12 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <div className="container">
       <Head>
         <title>CardsEditor</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/cardseditor.jpg" />
       </Head>
 
       <main>
@@ -17,6 +18,10 @@ export default function Home() {
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
+        </p>
+
+        <p className='description'>
+          Read <Link href="/posts/first-post"><a>this</a></Link> page!
         </p>
 
         <div className="grid">
@@ -56,8 +61,8 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+          {/* <img src="/cardseditor.jpg" alt="Vercel" className="logo" /> */}
+          © 2022 CardsEditor
         </a>
       </footer>
 
@@ -136,7 +141,7 @@ export default function Home() {
           border-radius: 5px;
           padding: 0.75rem;
           font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          font-family: Roboto Mono, Menlo, Monaco, Lucida Console, Liberation Mono,
             DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
         }
 
