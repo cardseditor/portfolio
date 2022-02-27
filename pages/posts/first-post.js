@@ -7,7 +7,7 @@ export default function FirstPost() {
     <Layout>
       <Head>
         <title>First Post</title>
-        l<link rel="icon" href="/cardseditor.jpg" />
+        <link rel="icon" href="/profile.jpg" />
       </Head>
       <h1>First Post</h1>
       <h2>
