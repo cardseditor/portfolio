@@ -5,8 +5,9 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Noto Sans JP, sans-serif;
   line-height: 1.6;
-  font-size: 18px;
-  background: gray;
+  font-size: 4vw;
+  background: #282c34;
+  color: #eee;
 }
 
 * {
@@ -28,5 +29,7 @@ img {
 }
 
 section {
-  background-color: red;
+  background-color: #333;
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
 }

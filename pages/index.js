@@ -21,13 +21,9 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>I'm CardsEditor!</p>
-        <p>
-          Twitter:{' '}
-          <a href="https://twitter.com/CardsEditor">CardsEditor</a>
-        </p>
+        <p className={utilStyles.selfIntro}>I’m CardsEditor!</p>
       </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+      <section className={utilStyles.headingMd}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (

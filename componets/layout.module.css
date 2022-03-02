@@ -1,7 +1,11 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
   max-width: 36rem;
-  padding: 0 1rem;
-  margin: 3rem auto 6rem;
+  padding: 2rem 1rem 1rem;
+  margin: auto;
 }
 
 .header {
@@ -21,5 +25,8 @@
 }
 
 .backToHome {
-  margin: 3rem 0 0;
+}
+
+.footer {
+  text-align: center;
 }
