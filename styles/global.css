@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
+
 html,
 body {
   padding: 0;
@@ -5,8 +7,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Noto Sans JP, sans-serif;
   line-height: 1.6;
-  font-size: 4vw;
-  background: #282c34;
+  font-size: clamp(16px, 4vw, 20px);
+  background: #21252b;
   color: #eee;
 }
 
@@ -29,7 +31,7 @@ img {
 }
 
 section {
-  background-color: #333;
-  padding: 0.5rem 1rem;
+  background-color: #282c34;
+  padding: 0.5rem 2rem;
   margin: 1rem 0;
 }
