@@ -22,8 +22,18 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p className={utilStyles.selfIntro}>I’m CardsEditor!</p>
+
+        <p className={utilStyles.selfIntro}>
+          <a href='https://twitter.com/CardsEditor' target="_blank">Twitter</a>
+        </p>
+        <p className={utilStyles.selfIntro}>
+          <a href='https://www.instagram.com/cardseditor/' target="_blank">Instagram</a>
+        </p>
+        <p className={utilStyles.selfIntro}>
+          <a href='https://github.com/cardseditor' target="_blank">GitHub</a>
+        </p>
       </section>
-      <section className={utilStyles.headingMd}>
+      {/* <section className={utilStyles.headingMd}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -37,7 +47,7 @@ export default function Home({ allPostsData }) {
               </small>
             </li>          ))}
         </ul>
-      </section>
+      </section> */}
     </Layout>
   )
 }
