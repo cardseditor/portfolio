@@ -32,6 +32,9 @@ export default function Home({ allPostsData }) {
         <p className={utilStyles.selfIntro}>
           <a href='https://github.com/cardseditor' target="_blank">GitHub</a>
         </p>
+        <p className={utilStyles.selfIntro}>
+          <a href='https://www.youtube.com/channel/UCD4Vokjng44fu0vBpY50odg' target="_blank">YouTube</a>
+        </p>
       </section>
       {/* <section className={utilStyles.headingMd}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
