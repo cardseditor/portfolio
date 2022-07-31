@@ -36,7 +36,7 @@ export default function Home({ allPostsData }) {
           <a href='https://www.youtube.com/channel/UCD4Vokjng44fu0vBpY50odg' target="_blank">YouTube</a>
         </p>
       </section>
-      <section className={utilStyles.headingMd}>
+      {/* <section className={utilStyles.headingMd}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
@@ -50,7 +50,7 @@ export default function Home({ allPostsData }) {
               </small>
             </li>          ))}
         </ul>
-      </section>
+      </section> */}
     </Layout>
   )
 }
