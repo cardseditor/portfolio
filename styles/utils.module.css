@@ -1,24 +1,26 @@
 .heading2Xl {
-  font-size: 2.5em;
+  font-size: 2.4em;
   font-weight: 400;
   letter-spacing: 0.05rem;
   margin: 1rem 0;
 }
 
 .headingXl {
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 800;
   letter-spacing: -0.05rem;
   margin: 1rem 0;
 }
 
 .headingLg {
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin: 1rem 0;
 }
 
 .headingMd {
-  font-size: 1.2em;
+  font-size: 1em;
+  padding: 1.6em;
+  border-radius: 0.4em;
 }
 
 .borderCircle {
@@ -26,7 +28,14 @@
 }
 
 .selfIntro {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+}
 
+.selfIntro a {
+  display: flex;
+  flex-grow: 10;
 }
 
 .list {
