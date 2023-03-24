@@ -2,7 +2,7 @@
   font-size: 2.4em;
   font-weight: 400;
   letter-spacing: 0.05rem;
-  margin: 1rem 0;
+  margin: 0rem 0;
 }
 
 .headingXl {
@@ -28,7 +28,9 @@
 }
 
 .selfIntro {
-  padding: 12px;
+  color: #999;
+  padding-left: 4px;
+  padding-bottom: 12px;
   display: flex;
   align-items: center;
 }
@@ -36,6 +38,13 @@
 .selfIntro a {
   display: flex;
   flex-grow: 10;
+}
+
+.row {
+  gap: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .list {
@@ -46,8 +55,4 @@
 
 .listItem {
   margin: 0 0 1rem;
-}
-
-.lightText {
-  color: #999;
 }

@@ -2,9 +2,14 @@ import Head from 'next/head'
 import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPen } from "@fortawesome/free-solid-svg-icons";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const name = 'CardsEditor'
-export const siteTitle = 'Next.js Sample Website'
+export const siteTitle = name
 
 export default function Layout({ children, home }) {
   return (
@@ -27,14 +32,60 @@ export default function Layout({ children, home }) {
       <div>
         <header className={styles.header}>
           {home ? (
-            <>
+            <div className={utilStyles.row}>
               <img
                 src="/images/profile.jpg"
                 className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
                 alt={name}
               />
-              <h1 className={utilStyles.heading2Xl}>{name}</h1>
-            </>
+              <div>
+                <h1 className={utilStyles.heading2Xl}>{name}</h1>
+                <div className={utilStyles.selfIntro}>#android #design #web #photo</div>
+
+                <div className="row icons">
+                  <a href="https://github.com/cardseditor" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faGithub}
+                      style={{
+                        width: "24px",
+                        marginLeft: "4px",
+                        marginRight: "16px",
+                      }}
+                    />
+                  </a>
+                  <a href="https://twitter.com/cardseditor" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faTwitter}
+                      style={{
+                        width: "24px",
+                        marginLeft: "4px",
+                        marginRight: "16px",
+                      }}
+                    />
+                  </a>
+                  <a href="https://www.instagram.com/cardseditor/" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faInstagram}
+                      style={{
+                        width: "24px",
+                        marginLeft: "4px",
+                        marginRight: "16px",
+                      }}
+                    />
+                  </a>
+                  <a href="https://pc.gajeroll.com/" target="_blank">
+                    <FontAwesomeIcon
+                      icon={faPen}
+                      style={{
+                        width: "24px",
+                        marginLeft: "4px",
+                        marginRight: "16px",
+                      }}
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
           ) : (
             <>
               <Link href="/">
@@ -66,7 +117,7 @@ export default function Layout({ children, home }) {
         </main>
       </div>
       <footer className={styles.footer}>
-        <small>© 2022 CardsEditor</small>
+        <small>© 2022-{new Date().getFullYear()} {name}</small>
       </footer>
     </div>
   )
