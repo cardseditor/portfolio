@@ -22,7 +22,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
+  background-color: #333;
 }
 
 img {
@@ -34,4 +34,8 @@ section {
   background-color: #282c34;
   padding: 0.5rem 2rem;
   margin: 1rem 0;
+}
+
+small {
+  color: #999;
 }
