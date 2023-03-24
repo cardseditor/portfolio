@@ -15,7 +15,7 @@ export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
-        <link rel="icon" href="/images/profile.jpg" />
+        <link rel="icon" href="/images/profile.png" />
         <meta
           name="description"
           content="Learn how to build a personal website using Next.js"
@@ -34,8 +34,8 @@ export default function Layout({ children, home }) {
           {home ? (
             <div className={utilStyles.row}>
               <img
-                src="/images/profile.jpg"
-                className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
+                src="/images/profile.png"
+                className={`${styles.headerHomeImage}`}
                 alt={name}
               />
               <div>
@@ -91,7 +91,7 @@ export default function Layout({ children, home }) {
               <Link href="/">
                 <a>
                   <img
-                    src="/images/profile.jpg"
+                    src="/images/profile.png"
                     className={`${styles.headerImage} ${utilStyles.borderCircle}`}
                     alt={name}
                   />
