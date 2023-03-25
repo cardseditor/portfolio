@@ -2,7 +2,6 @@ import Layout from '../../componets/layout'
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head'
 import Date from '../../componets/date'
-import utilStyles from '../../styles/utils.module.css'
 
 export default function Post({ postData }) {
   return (
@@ -11,11 +10,16 @@ export default function Post({ postData }) {
         <title>{postData.title}</title>
       </Head>
       <article>
-        <h1 className={utilStyles.headingXl}>{postData.title}</h1>
-        <div className={utilStyles.lightText}>
+        <h1>
+          <span className='material-symbols-outlined article-icon'>{postData.icon}</span>
+          {postData.title}
+        </h1>
+        <div className='date'>
           <Date dateString={postData.date} />
         </div>
-        <div dangerouslySetInnerHTML={{__html: postData.contentHtml }} />
+        <section>
+          <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        </section>
       </article>
     </Layout>
   )
