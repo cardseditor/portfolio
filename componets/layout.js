@@ -1,9 +1,6 @@
 import Head from 'next/head'
-import styles from './layout.module.css'
-import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -13,9 +10,13 @@ export const siteTitle = name
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         <link rel="icon" href="/images/profile.png" />
+        <meta name="og:title" content={siteTitle} />
         <meta
           name="description"
           content="CardsEditorのポートフォリオサイト"
@@ -26,99 +27,73 @@ export default function Layout({ children, home }) {
             siteTitle
           )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.zeit.co%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
         />
-        <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300" rel="stylesheet" />
+        <meta http-equiv="content-language" content="ja"></meta>
       </Head>
-      <div>
-        <header className={styles.header}>
+      <header>
+        <div className='header-container'>
           {home ? (
-            <div className={utilStyles.row}>
+            <div className='header-left'>
               <img
                 src="/images/profile.png"
-                className={`${styles.headerHomeImage}`}
                 alt={name}
+                className='header-img'
               />
-              <div>
-                <h1 className={utilStyles.heading2Xl}>{name}</h1>
-                <div className={utilStyles.selfIntro}>#android #design #web #photo</div>
+              <h1 className='header-title'>{name}</h1>
+              {/* <div>#android #design #web #photo</div> */}
+            </div>
+          ) : <Link href="/">
+            <a className='header-left'>
+              <img
+                src="/images/profile.png"
+                alt={name}
+                className='header-img'
+              />
+              <h1 className='header-title'>{name}</h1>
+              {/* <div>#android #design #web #photo</div> */}
+            </a>
+          </Link>
+          }
 
-                <div className="row icons">
-                  <a href="https://github.com/cardseditor" target="_blank">
-                    <FontAwesomeIcon
-                      icon={faGithub}
-                      style={{
-                        width: "24px",
-                        marginLeft: "4px",
-                        marginRight: "16px",
-                      }}
-                    />
-                  </a>
-                  <a href="https://twitter.com/cardseditor" target="_blank">
-                    <FontAwesomeIcon
-                      icon={faTwitter}
-                      style={{
-                        width: "24px",
-                        marginLeft: "4px",
-                        marginRight: "16px",
-                      }}
-                    />
-                  </a>
-                  <a href="https://www.instagram.com/cardseditor/" target="_blank">
-                    <FontAwesomeIcon
-                      icon={faInstagram}
-                      style={{
-                        width: "24px",
-                        marginLeft: "4px",
-                        marginRight: "16px",
-                      }}
-                    />
-                  </a>
-                  <a href="https://pc.gajeroll.com/" target="_blank">
-                    <FontAwesomeIcon
-                      icon={faPen}
-                      style={{
-                        width: "24px",
-                        marginLeft: "4px",
-                        marginRight: "16px",
-                      }}
-                    />
-                  </a>
-                </div>
-              </div>
-            </div>
-          ) : (
-            <>
-              <Link href="/">
-                <a>
-                  <img
-                    src="/images/profile.png"
-                    className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                    alt={name}
-                  />
-                </a>
-              </Link>
-              <h2 className={utilStyles.headingLg}>
-                <Link href="/">
-                  <a className={utilStyles.colorInherit}>{name}</a>
-                </Link>
-              </h2>
-            </>
-          )}
-        </header>
-        <main>
-          {children}
-          {!home && (
-            <div className={styles.backToHome}>
-              <Link href="/">
-                <a>← Back to home</a>
-              </Link>
-            </div>
-          )}
-        </main>
-      </div>
-      <footer className={styles.footer}>
-        <small>© 2022-{new Date().getFullYear()} {name}</small>
+          <div className='icons'>
+            <a href="https://github.com/cardseditor" target="_blank">
+              <FontAwesomeIcon
+                icon={faGithub}
+                className='font-awesome-icon'
+              />
+            </a>
+            <a href="https://twitter.com/cardseditor" target="_blank">
+              <FontAwesomeIcon
+                icon={faTwitter}
+                className='font-awesome-icon'
+              />
+            </a>
+            <a href="https://www.instagram.com/cardseditor/" target="_blank">
+              <FontAwesomeIcon
+                icon={faInstagram}
+                className='font-awesome-icon'
+              />
+            </a>
+            <a href="https://pc.gajeroll.com/" target="_blank">
+              <span className='material-symbols-outlined size-24'>article</span>
+            </a>
+          </div>
+        </div>
+      </header>
+      <main>
+        {children}
+        {!home && (
+          <div className='home'>
+            <Link href="/">
+              <a>◀ ホーム</a>
+            </Link>
+          </div>
+        )}
+      </main>
+      <footer>
+        <small className='copyright'>© 2022-{new Date().getFullYear()} {name}</small>
       </footer>
-    </div>
+    </>
   )
 }

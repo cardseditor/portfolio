@@ -1,19 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Noto+Sans+JP:wght@300;500&display=swap');
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Inter, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Noto Sans JP, sans-serif;
-  line-height: 1.6;
-  font-size: clamp(16px, 4vw, 20px);
+  font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, -apple-system, BlinkMacSystemFont, Noto Sans JP, sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 2.2;
   background: #21252b;
-  color: #eee;
+  color: #ddd;
 }
 
 * {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
+}
+
+header {
+  background-color: #282c34;
+  padding: 0 20px;
+  margin: 40px auto 0 auto;
+  border-radius: 1000px;
+  width: min(90%,1200px);
+}
+
+.header-img {
+  height: clamp(32px, 5vw, 60px);
+  width: clamp(32px, 5vw, 60px);
+}
+
+.header-title {
+  font-size: clamp(24px, 4vw, 40px);;
+  font-weight: 500;
+  color: #ccc;
+  margin: 10px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(0px, 1vw, 16px);
+  height: clamp(60px, 10vw, 90px);
 }
 
 a {
@@ -22,7 +58,7 @@ a {
 }
 
 a:hover {
-  background-color: #333;
+  opacity: 0.5;
 }
 
 img {
@@ -30,12 +66,153 @@ img {
   display: block;
 }
 
+.icons {
+  display: flex;
+  flex-direction: row;
+  gap: clamp(4px, 1.6vw, 20px);
+  justify-content: center;
+  align-items: center;
+  padding-right: clamp(4px, 1.6vw, 20px);
+}
+
+.icons a {
+  display: flex;
+  align-items: center;
+}
+
+.font-awesome-icon {
+  width: clamp(20px, 2.8vw, 28px);
+}
+
+span.size-24 {
+  font-size: clamp(26px, 3.8vw, 36px);
+}
+
+main {
+  width: min(90%,1000px);
+  margin: 0 auto;
+}
+
 section {
   background-color: #282c34;
-  padding: 0.5rem 2rem;
+  padding: 2rem clamp(2rem, 2vw, 3rem);
   margin: 1rem 0;
+  border-radius: 20px;
+}
+
+article p {
+  margin: 18px 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding-top: 2rem;
+}
+
+.content-icon {
+  width: 24px;
+}
+
+.content-title {
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.content-title a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+span.article-icon {
+  font-size: clamp(32px, 4vw, 40px);
+}
+
+/* .material-symbols-outlined {
+} */
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+li section {
+  padding: 0;
+}
+
+.section-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.section-link-left {
+  background-color: #1e2329;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem 0 0 1rem;
+}
+
+.section-link-left span {
+  color: #aaa;
+  font-size: 40px;
+}
+
+.section-link-right {
+  padding-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.date {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+article h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+article h1 span {
+  margin-right: 1rem;
+}
+
+article h2:not(:first-child) {
+  padding-top: 2rem;
+}
+
+.home {
+  margin-left: 1rem;
 }
 
 small {
   color: #999;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  color: #999;
+}
+
+::selection {
+  background-color: #999;
+  color: #333;
 }
