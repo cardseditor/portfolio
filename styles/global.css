@@ -176,6 +176,10 @@ li section {
   justify-content: space-around;
 }
 
+.blog-title {
+  font-weight: 500;
+}
+
 .date {
   display: flex;
   justify-content: flex-end;
