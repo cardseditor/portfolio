@@ -26,10 +26,6 @@ export default function Home({ allPostsData }) {
         <section>
           <div className="content-title">
             <a href="https://github.com/Dev-roll/thundercard" target="_blank">
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="content-icon"
-              />
               <div>
                 Thundercard：名刺からインスピレーションを得たSNSアプリ
               </div>
@@ -49,11 +45,27 @@ export default function Home({ allPostsData }) {
 
         <section>
           <div className="content-title">
+            <a href="https://github.com/dao0203/cooking_completly_understood" target="_blank">
+              <div>
+                レシピLite：画像認識でレシピを提案するアプリ
+              </div>
+            </a>
+          </div>
+          <p>
+            技育CAMPキャラバン2023 Vol.2 @福岡 企業賞（株式会社サイバーエージェント）受賞
+            <br />
+            2023年6月（1週間）<br />
+            Flutter、TensorFlow Lite、PaLM API<br />
+            テキストではなくカメラを使って食材を簡単に読み取り、レシピを提案するアプリである。食品管理やAIとのチャット、栄養素管理などの機能がある。食材の活用や食事のバリエーションを広げることが期待できる。
+            クリーンアーキテクチャを採用し、テストや役割分担しやすい環境を整えて、4人チームで開発した。
+            TensorFlow Liteを利用した画像認識、GoogleのPaLM APIを利用したチャットの実装などに貢献した。
+            初めてアプリに機械学習モデルを導入し、ML KitやChatGPTとも比較してパフォーマンス改善に取り組むなど、積極的に機械学習に触れることができた。
+          </p>
+        </section>
+
+        <section>
+          <div className="content-title">
             <a href="https://github.com/Dev-roll/couponroll-client" target="_blank">
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="content-icon"
-              />
               <div>
                 CouponRoll：店舗アプリを気軽に導入できるサービス
               </div>
@@ -74,33 +86,25 @@ export default function Home({ allPostsData }) {
         <section>
           <div className="content-title">
             <a href="https://github.com/Dev-roll/qrio" target="_blank">
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="content-icon"
-              />
               <div>
                 QR I/O：QRコード管理アプリ
               </div>
             </a>
           </div>
           <p>
-            技育CAMP Vol.9 努力賞受賞<br />
             技育CAMPアドバンス2023 Vol.1 企業賞（株式会社サイバーエージェント）受賞<br />
+            技育CAMP Vol.9 努力賞受賞<br />
             2022年12月（1週間）、2023年3月（1週間）<br />
             Flutter<br />
             QRコードを読み取って履歴に残したり、カスタマイズして生成したりできる。
             履歴の管理や表示部分の実装、そしてイベント後のアプリのリリース作業を担った。
-            この作品は、非常に直感的なレイアウトやパフォーマンス改善が評価された。
+            この作品は、読み取りと作成の画面遷移や可視化された履歴などの非常に直感的なレイアウトや、パフォーマンス改善が評価された。
           </p>
         </section>
 
         <section>
           <div className="content-title">
             <a href="https://github.com/Dev-roll/capture-the-task" target="_blank">
-              <FontAwesomeIcon
-                icon={faGithub}
-                className="content-icon"
-              />
               <div>
                 Capture The Task：写真で管理する直感的なタスク管理アプリ
               </div>
@@ -118,7 +122,16 @@ export default function Home({ allPostsData }) {
           </p>
         </section>
 
-        <h2 className="section-title">インターン</h2>
+        <h2 className="section-title">インターンシップ</h2>
+
+        <section>
+          <div className="content-title">
+            楽天グループ株式会社
+          </div>
+          <p>
+            2023年8月〜9月の約2ヶ月間、アプリケーションエンジニアとして長期インターンに参加予定である。
+          </p>
+        </section>
 
         <section>
           <div className="content-title">
@@ -129,8 +142,68 @@ export default function Home({ allPostsData }) {
             株式会社UnReactにおいて、2021年5月から11月までの約半年間、週10時間ほど育成型のインターンに参加した。
             GitHubやReact、TypeScript、Firebaseなどを学習した。
             またECサイト制作に用いられるShopifyテーマのチーム開発に携わった。
-            円滑なチーム開発を行うためのポイントを学び、例えばプルリクエストするコードの内容が伝わるように簡潔にポイントを抑えて文章化することを心がけた。<br />
             単にエンジニアに必要なプログラミングスキルにとどまらず、スタートアップの意思決定や仕事を進める際の心構えなど、ビジネス的な視点を身につける大きなきっかけとなった。
+          </p>
+        </section>
+
+        <h2 className="section-title">イベント</h2>
+
+        <section>
+          <div className="content-title">
+            Bug Shooting Challenge #9
+          </div>
+          <p>
+            株式会社MIXI
+            <br />
+            2023年6月（1日間）<br />
+            Ruby、MySQL<br />
+            お問い合わせ内容およびログの情報から、バグの発見や修正に取り組んだ。
+            問題を発見した後、バグの原因や修正方法を導くのが難しいと感じた。
+          </p>
+        </section>
+
+        <section>
+          <div className="content-title">
+            DroidKaigi.collect {' { #2@Fukuoka }'}
+          </div>
+          <p>
+            2023年4月（1日間）<br />
+            Android<br />
+            LINE Fukuoka株式会社においてAndroidアプリ開発に関するLTを聴き、エンジニアの方々と交流した。
+            DroidKaigi 2023 のボランティアスタッフに参加するきっかけとなった。
+          </p>
+        </section>
+
+        <section>
+          <div className="content-title">
+            <a href="https://github.com/CyberAgentHack/web-speed-hackathon-2023" target="_blank">
+              <div>
+                Web Speed Hackathon 2023
+              </div>
+            </a>
+          </div>
+          <p>
+            株式会社サイバーエージェント
+            <br />
+            2023年3月（2日間）<br />
+            React<br />
+            Webサービスのパフォーマンス改善に取り組んだ。パフォーマンスの確認や改善方法を学び、パフォーマンスを意識した開発の重要性に気づくことができた。
+          </p>
+        </section>
+
+        <h2 className="section-title">活動</h2>
+
+        <section>
+          <div className="content-title">
+            <a href="https://2023.droidkaigi.jp/" target="_blank">
+              <div>
+                DroidKaigi 2023
+              </div>
+            </a>
+          </div>
+          <p>
+            DroidKaigi 2023 のボランティアスタッフとして活動している。
+            配信チームに所属し、セッションの動画配信や編集に携わる予定である。
           </p>
         </section>
 
@@ -147,7 +220,7 @@ export default function Home({ allPostsData }) {
                         <span className='material-symbols-outlined article-icon'>{icon}</span>
                       </div>
                       <div className="section-link-right">
-                        <div>{title}</div>
+                        <div className="blog-title">{title}</div>
                         <small>
                           <Date dateString={date} />
                         </small>
