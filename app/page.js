@@ -1,25 +1,18 @@
-import Head from "next/head";
 import Layout, { siteTitle } from "../componets/layout";
 import { getSortedPostsData } from "../lib/posts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Date from "../componets/date";
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
 
-export default function Home({ allPostsData }) {
+export const metadata = {
+  title: siteTitle,
+};
+
+export default async function Home() {
+  const allPostsData = getSortedPostsData();
   return (
     <Layout home>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <div className="sections">
         <h2 className="section-title">ハッカソン</h2>
 
@@ -212,8 +205,7 @@ export default function Home({ allPostsData }) {
         <ul>
           {allPostsData.map(({ id, date, title, icon }) => (
             <li key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>
+              <Link href={`/posts/${id}`} className='post-link'>
                   <section>
                     <div className="section-link">
                       <div className="section-link-left">
@@ -227,12 +219,10 @@ export default function Home({ allPostsData }) {
                       </div>
                     </div>
                   </section>
-                </a>
               </Link>
             </li>))}
         </ul>
       </div>
-      <style jsx>{``}</style>
     </Layout>
   );
 }

@@ -42,8 +42,8 @@ export default function Layout({ children, home }) {
               <h1 className='header-title'>{name}</h1>
               {/* <div>#android #design #web #photo</div> */}
             </div>
-          ) : <Link href="/">
-            <a className='header-left'>
+          ) : (
+            <Link href="/" className='header-left'>
               <img
                 src="/images/profile.png"
                 alt={name}
@@ -51,8 +51,8 @@ export default function Layout({ children, home }) {
               />
               <h1 className='header-title'>{name}</h1>
               {/* <div>#android #design #web #photo</div> */}
-            </a>
-          </Link>
+            </Link>
+          )
           }
 
           <div className='icons'>
@@ -82,13 +82,11 @@ export default function Layout({ children, home }) {
       </header>
       <main>
         {children}
-        {!home && (
-          <div className='home'>
-            <Link href="/">
-              <a>◀ ホーム</a>
-            </Link>
-          </div>
-        )}
+          {!home && (
+            <div className='home'>
+              <Link href="/">◀ ホーム</Link>
+            </div>
+          )}
       </main>
       <footer>
         <small className='copyright'>© 2022-{new Date().getFullYear()} {name}</small>
