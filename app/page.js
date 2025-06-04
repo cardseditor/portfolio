@@ -1,7 +1,6 @@
 import Layout, { siteTitle } from "../componets/layout";
 import { getSortedPostsData } from "../lib/posts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { postIcon } from "../componets/icons";
 import Link from "next/link";
 import Date from "../componets/date";
 
@@ -69,7 +68,7 @@ export default async function Home() {
             2023年2月（2週間）<br />
             Kotlin、Go、MySQL<br />
             集客に取り組もうとする小規模事業者が、気軽に店舗アプリを取り入れてクーポンなどの割引制度を導入できるようにするサービスである。
-            YouTube、Twitter、PayPayなどの既存のサービスを参考に、FigJamでアプリ全体のレイアウトやページ遷移を決定し、フロント部分の実装に貢献した。
+            YouTube、X、PayPayなどの既存のサービスを参考に、FigJamでアプリ全体のレイアウトやページ遷移を決定し、フロント部分の実装に貢献した。
             非常に洗練された直感的なデザインやチーム開発における試行錯誤、バックエンドの作り込みが評価された。<br />
             社会で活躍できるエンジニアになることを見据えて、ハッカソンで初めてビジネス向けのサービス開発に取り組んだ。
             個人が簡単に動画をアップロードできるYouTubeのようなプラットフォームに着目し、店舗ページの開設や割引制度の提供ができる1つのプラットフォームとしたことで開発コストの削減ができるように工夫した。
@@ -209,7 +208,7 @@ export default async function Home() {
                   <section>
                     <div className="section-link">
                       <div className="section-link-left">
-                        <span className='material-symbols-outlined article-icon'>{icon}</span>
+                        {postIcon(icon)}
                       </div>
                       <div className="section-link-right">
                         <div className="blog-title">{title}</div>

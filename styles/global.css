@@ -80,12 +80,15 @@ img {
   align-items: center;
 }
 
-.font-awesome-icon {
+.svg-icon {
   width: clamp(20px, 2.8vw, 28px);
+  height: auto;
+  fill: currentColor;
 }
 
-span.size-24 {
-  font-size: clamp(26px, 3.8vw, 36px);
+.size-24 {
+  width: clamp(26px, 3.8vw, 36px);
+  height: auto;
 }
 
 main {
@@ -127,12 +130,11 @@ article p {
   gap: 0.5rem;
 }
 
-span.article-icon {
-  font-size: clamp(32px, 4vw, 40px);
+article .article-icon, .article-icon {
+  width: clamp(32px, 4vw, 40px);
+  height: auto;
 }
 
-/* .material-symbols-outlined {
-} */
 
 ul {
   padding: 0;

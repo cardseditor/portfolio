@@ -1,6 +1,7 @@
 import Layout from '../../../componets/layout'
 import { getAllPostIds, getPostData } from '../../../lib/posts'
 import Date from '../../../componets/date'
+import { postIcon } from '../../../componets/icons'
 
 export async function generateStaticParams() {
   const paths = getAllPostIds()
@@ -18,7 +19,7 @@ export default async function Post({ params }) {
     <Layout>
       <article>
         <h1>
-          <span className='material-symbols-outlined article-icon'>{postData.icon}</span>
+          {postIcon(postData.icon)}
           {postData.title}
         </h1>
         <div className='date'>
