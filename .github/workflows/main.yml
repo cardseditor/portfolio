@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: '16'
+  BUN_VERSION: '1.2.15'
 
 jobs:
   deploy:
@@ -14,17 +14,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Use Node.js
-        uses: actions/setup-node@v2
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v1
         with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+          bun-version: ${{ env.BUN_VERSION }}
       - name: Install packages
-        run: npm install
+        run: bun install
       - name: build blog
-        run: npm run build
+        run: bun run build
       - name: export blog
-        run: npm run export
+        run: bun run export
 
       # - uses: borales/actions-yarn@v2.3.0
       #   with:
