@@ -205,8 +205,7 @@ export default async function Home() {
         <ul>
           {allPostsData.map(({ id, date, title, icon }) => (
             <li key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>
+              <Link href={`/posts/${id}`} className='post-link'>
                   <section>
                     <div className="section-link">
                       <div className="section-link-left">
@@ -220,7 +219,6 @@ export default async function Home() {
                       </div>
                     </div>
                   </section>
-                </a>
               </Link>
             </li>))}
         </ul>
