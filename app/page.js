@@ -1,7 +1,5 @@
 import Layout, { siteTitle } from "../componets/layout";
 import { getSortedPostsData } from "../lib/posts";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import Date from "../componets/date";
 

@@ -1,9 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTwitter } from "@fortawesome/free-brands-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const name = 'CardsEditor'
 export const siteTitle = name
@@ -56,26 +52,17 @@ export default function Layout({ children, home }) {
           }
 
           <div className='icons'>
-            <a href="https://github.com/cardseditor" target="_blank">
-              <FontAwesomeIcon
-                icon={faGithub}
-                className='font-awesome-icon'
-              />
+            <a href="https://github.com/cardseditor" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/github.svg" alt="GitHub" className='icon' />
             </a>
-            <a href="https://twitter.com/cardseditor" target="_blank">
-              <FontAwesomeIcon
-                icon={faTwitter}
-                className='font-awesome-icon'
-              />
+            <a href="https://x.com/cardseditor" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/x.svg" alt="X" className='icon' />
             </a>
-            <a href="https://www.instagram.com/cardseditor/" target="_blank">
-              <FontAwesomeIcon
-                icon={faInstagram}
-                className='font-awesome-icon'
-              />
+            <a href="https://www.instagram.com/cardseditor/" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/instagram.svg" alt="Instagram" className='icon' />
             </a>
-            <a href="https://pc.gajeroll.com/" target="_blank">
-              <span className='material-symbols-outlined size-24'>article</span>
+            <a href="https://pc.gajeroll.com/" target="_blank" rel="noopener noreferrer">
+              <img src="/icons/article.svg" alt="Blog" className='size-24' />
             </a>
           </div>
         </div>
