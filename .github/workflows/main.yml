@@ -22,8 +22,6 @@ jobs:
         run: bun install
       - name: build blog
         run: bun run build
-      - name: export blog
-        run: bun run export
 
       # - uses: borales/actions-yarn@v2.3.0
       #   with:
