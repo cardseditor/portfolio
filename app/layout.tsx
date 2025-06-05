@@ -16,7 +16,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@300"
         />
-        <script src="https://cdn.tailwindcss.com" defer></script>
       </head>
       <body>{children}</body>
     </html>
