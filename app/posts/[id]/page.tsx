@@ -21,10 +21,12 @@ export default async function Post({ params }: any) {
     <Layout>
       <article>
         <h1>
-          <span className='material-symbols-outlined article-icon'>{postData.icon}</span>
+          <span className="material-symbols-outlined article-icon">
+            {postData.icon}
+          </span>
           {postData.title}
         </h1>
-        <div className='date'>
+        <div className="date">
           <Date dateString={postData.date ?? ''} />
         </div>
         <section>

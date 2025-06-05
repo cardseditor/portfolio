@@ -2,7 +2,11 @@ name: Build
 
 on:
   push:
+    branches:
+      - main
   pull_request:
+    branches:
+      - main
 
 env:
   BUN_VERSION: '1.2.15'
@@ -12,11 +16,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref || github.ref }}
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: ${{ env.BUN_VERSION }}
       - name: Install dependencies
         run: bun install
+      - name: Lint and format
+        run: |
+          bunx eslint . --fix
+          bunx prettier -w .
+      - name: Commit changes
+        run: |
+          branch="${{ github.head_ref || github.ref_name }}"
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add .
+            git reset .github/
+            git commit -m "chore: apply lint and format"
+            git push origin HEAD:$branch
+          fi
       - name: Build
         run: bun run build

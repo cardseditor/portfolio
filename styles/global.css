@@ -3,8 +3,20 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Inter, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, -apple-system, BlinkMacSystemFont, Noto Sans JP, sans-serif;
+  font-family:
+    Inter,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    -apple-system,
+    BlinkMacSystemFont,
+    Noto Sans JP,
+    sans-serif;
   font-size: 18px;
   font-weight: 300;
   line-height: 2.2;
@@ -23,7 +35,7 @@ header {
   padding: 0 20px;
   margin: 40px auto 0 auto;
   border-radius: 1000px;
-  width: min(90%,1200px);
+  width: min(90%, 1200px);
 }
 
 .header-img {
@@ -32,7 +44,7 @@ header {
 }
 
 .header-title {
-  font-size: clamp(24px, 4vw, 40px);;
+  font-size: clamp(24px, 4vw, 40px);
   font-weight: 500;
   color: #ccc;
   margin: 10px;
@@ -89,7 +101,7 @@ img {
 }
 
 main {
-  width: min(90%,1000px);
+  width: min(90%, 1000px);
   margin: 0 auto;
 }
 
