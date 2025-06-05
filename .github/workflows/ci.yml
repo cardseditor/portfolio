@@ -12,11 +12,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Setup Bun
         uses: oven-sh/setup-bun@v1
         with:
           bun-version: ${{ env.BUN_VERSION }}
       - name: Install dependencies
         run: bun install
+      - name: Lint and format
+        run: |
+          bunx eslint . --fix
+          bunx prettier -w .
+      - name: Commit changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions"
+            git config user.email "github-actions@github.com"
+            git add .
+            git commit -m "chore: apply lint and format"
+            git push
+          fi
       - name: Build
         run: bun run build
