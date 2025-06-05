@@ -4,9 +4,15 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 
+export interface PostMeta {
+  [key: string]: any
+  id: string
+  date?: string
+}
+
 const postsDirectory = path.join(process.cwd(), 'posts')
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): PostMeta[] {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
   const allPostsData = fileNames.map(fileName => {
@@ -28,7 +34,9 @@ export function getSortedPostsData() {
   })
   // Sort posts by date
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    const aDate = (a as PostMeta).date ?? ''
+    const bDate = (b as PostMeta).date ?? ''
+    if (aDate < bDate) {
       return 1
     } else {
       return -1
@@ -36,7 +44,7 @@ export function getSortedPostsData() {
   })
 }
 
-export function getAllPostIds() {
+export function getAllPostIds(): { params: { id: string } }[] {
   const fileNames = fs.readdirSync(postsDirectory)
   return fileNames.map(fileName => {
     return {
@@ -47,7 +55,7 @@ export function getAllPostIds() {
   })
 }
 
-export async function getPostData(id) {
+export async function getPostData(id: string): Promise<PostMeta & { contentHtml: string }> {
   const fullPath = path.join(postsDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 

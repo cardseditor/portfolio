@@ -1,10 +1,16 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { ReactNode } from 'react'
 
 const name = 'CardsEditor'
 export const siteTitle = name
 
-export default function Layout({ children, home }) {
+interface LayoutProps {
+  children: ReactNode
+  home?: boolean
+}
+
+export default function Layout({ children, home }: LayoutProps) {
   return (
     <>
       <Head>

@@ -1,10 +1,11 @@
 import '../styles/global.css'
+import { ReactNode } from 'react'
 
 export const metadata = {
   title: 'CardsEditor',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="ja">
       <head>
