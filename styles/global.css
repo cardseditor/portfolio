@@ -94,10 +94,14 @@ img {
 
 .icon {
   width: clamp(20px, 2.8vw, 28px);
+  fill: currentColor;
+  stroke: currentColor;
 }
 
 .size-24 {
   width: clamp(26px, 3.8vw, 36px);
+  fill: currentColor;
+  stroke: currentColor;
 }
 
 main {
