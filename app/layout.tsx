@@ -3,6 +3,9 @@ import { ReactNode } from 'react'
 
 export const metadata = {
   title: 'CardsEditor',
+  icons: {
+    icon: '/images/profile.png',
+  },
 }
 
 export default function RootLayout({ children }: { children: ReactNode }) {
