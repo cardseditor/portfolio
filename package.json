@@ -21,6 +21,11 @@
     "remark-html": "^15.0.1",
     "styled-components": "^5.3.9"
   },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.0.0",
+    "typescript": "^5.0.0"
+  },
   "engines": {
     "bun": ">=1.0.0"
   }

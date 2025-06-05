@@ -7,7 +7,7 @@ export const metadata = {
   title: siteTitle,
 };
 
-export default async function Home() {
+export default async function Home(): Promise<JSX.Element> {
   const allPostsData = getSortedPostsData();
   return (
     <Layout home>
@@ -212,7 +212,7 @@ export default async function Home() {
                       <div className="section-link-right">
                         <div className="blog-title">{title}</div>
                         <small>
-                          <Date dateString={date} />
+                          <Date dateString={date ?? ''} />
                         </small>
                       </div>
                     </div>
