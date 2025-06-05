@@ -22,8 +22,8 @@ jobs:
         run: bun install
       - name: Lint and format
         run: |
-          bunx eslint . --fix
-          bunx prettier -w .
+          bun x eslint . --fix
+          bun x prettier -w .
       - name: Commit changes
         run: |
           if [ -n "$(git status --porcelain)" ]; then
