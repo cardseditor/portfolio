@@ -31,7 +31,7 @@ jobs:
             git config user.email "github-actions@github.com"
             git add .
             git commit -m "chore: apply lint and format"
-            git push
+            git push origin HEAD:${{ github.head_ref }}
           fi
       - name: Build
         run: bun run build
