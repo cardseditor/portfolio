@@ -94,8 +94,6 @@ img {
 
 .icon {
   width: clamp(20px, 2.8vw, 28px);
-  fill: currentColor;
-  stroke: currentColor;
 }
 
 .size-24 {
