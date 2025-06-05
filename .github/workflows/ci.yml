@@ -32,6 +32,7 @@ jobs:
             git config user.name "github-actions"
             git config user.email "github-actions@github.com"
             git add .
+            git reset .github/
             git commit -m "chore: apply lint and format"
             git push origin HEAD:$branch
           fi
