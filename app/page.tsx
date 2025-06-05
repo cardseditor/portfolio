@@ -7,7 +7,7 @@ export const metadata = {
   title: siteTitle
 }
 
-export default async function Home(): Promise<JSX.Element> {
+export default async function Home() {
   const allPostsData = getSortedPostsData()
   return (
     <Layout home>
