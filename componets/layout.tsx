@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { ReactNode } from 'react'
+import { GitHubIcon, XIcon, InstagramIcon, ArticleIcon } from './icons'
 
 const name = 'CardsEditor'
 export const siteTitle = name
@@ -59,32 +60,32 @@ export default function Layout({ children, home }: LayoutProps) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/icons/github.svg" alt="GitHub" className="icon" />
+              {/* GitHub Icon */}
+              <GitHubIcon className="icon" />
             </a>
             <a
               href="https://x.com/cardseditor"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/icons/x.svg" alt="X" className="icon" />
+              {/* X Icon */}
+              <XIcon className="icon" />
             </a>
             <a
               href="https://www.instagram.com/cardseditor/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img
-                src="/icons/instagram.svg"
-                alt="Instagram"
-                className="icon"
-              />
+              {/* Instagram Icon */}
+              <InstagramIcon className="icon" />
             </a>
             <a
               href="https://pc.gajeroll.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src="/icons/article.svg" alt="Blog" className="size-24" />
+              {/* Article Icon */}
+              <ArticleIcon className="size-24" />
             </a>
           </div>
         </div>
